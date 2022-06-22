@@ -1,4 +1,4 @@
-package com.coherentsolutions.training.aqa.java.web.nikonova;
+package com.coherentsolutions.training.aqa.java.web.nikonova.util;
 
 import org.openqa.selenium.By;
 

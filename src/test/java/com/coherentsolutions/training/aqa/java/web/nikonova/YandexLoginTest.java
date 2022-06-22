@@ -1,20 +1,21 @@
 package com.coherentsolutions.training.aqa.java.web.nikonova;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import com.coherentsolutions.training.aqa.java.web.nikonova.util.Elements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class YandexLoginTest extends Elements {
 
     private WebDriver driver;
     private final String LOGIN_BUTTON_LOCATOR = ".HeadBanner-ButtonsWrapper a:nth-child(2)";
 
-    @BeforeEach
-    void setup() {
+    @BeforeTest
+     void setup() {
         driver = new ChromeDriver();
     }
 
@@ -31,10 +32,10 @@ public class YandexLoginTest extends Elements {
         driver.findElement(getElementById("passp:sign-in")).click();
         Thread.sleep(2000);
 
-        Assertions.assertTrue(driver.getTitle().contains("Inbox"));
+        Assert.assertTrue(driver.getTitle().contains("Inbox"));
     }
 
-    @AfterEach
+    @AfterTest
     void cleanup() {
         driver.quit();
     }
